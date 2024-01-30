@@ -1,0 +1,10 @@
+:root {
+    /* colours */
+    --primary-color: #E8E8E8;
+    --secondary-color: #1B1B1B;
+    --dark-accent-color: #7E847F;
+    --light-accent-color: #F6F6F6;
+    --hover-color: #5F6560;
+    /* gap */
+    --primary-margin: 16px;
+}

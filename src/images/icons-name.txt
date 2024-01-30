@@ -1,0 +1,15 @@
+** Довідничок назв**
+
+icon-arrow
+icon-burger
+icon-close
+icon-dumbbell
+icon-facebook
+icon-heart
+icon-instagram
+icon-man
+icon-quotes
+icon-search
+icon-star
+icon-trash
+icon-youtube

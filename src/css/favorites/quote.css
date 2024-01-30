@@ -1,0 +1,244 @@
+.quote {
+    margin-top: 96px;
+}
+.container-quote {
+    border-radius: 30px;
+    background: #7E847F;
+    padding: 40px 20px;
+    display: flex;
+    position: relative;
+
+}
+.box-icon-man {
+    margin-right: 12px;
+    background-color: rgba(246, 246, 246, 0.1);
+    border-radius: 50%;
+    width: 34px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-icon-man {
+    
+    fill: rgba(246, 246, 246, 1);
+          
+}
+
+.quote-icon {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    fill: #F6F6F6;
+}
+
+.quote-background-image {
+    min-width: 100%;
+    height: 272px;
+    border-radius: 30px;
+    background-image: url("../../images/favorites/woomen_mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.quote-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+}
+
+.quote-title {
+    color: #F6F6F6;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.quote-text {
+    color: rgba(246, 246, 246, 0.60);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.quote-author {
+    color: #F6F6F6;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+
+}
+
+.inform {
+    position: relative;
+    height: 272px;
+
+}
+
+.inform-wrapper {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
+
+}
+
+.inform-icon-dumbbell {
+    margin-bottom: 15px;
+}
+
+.inform-label {
+    margin-bottom: 6px;
+    color: #1B1B1B;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+
+.inform-text {
+    color: rgba(27, 27, 27, 0.60);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+@media screen and (max-width: 767px) {
+    
+    .quote-wrapper {
+        width: 250px;
+
+    }
+
+}
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+    .quote-background-image {
+        background-image: url("../../images/favorites/woomen_mobile@2x.jpg");
+    }
+}
+@media screen and (min-width: 768px) {
+    .quote {
+            margin-top: 180px;
+        }
+    .container-quote {
+        padding: 64px 80px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        width: 736px;
+    }
+    .box-icon-man {
+        margin-right: 16px;
+    }
+    .quote-icon {
+        right: 80px;
+        top: 32px;
+    }
+
+    .quote-title {
+        font-size: 24px;
+        line-height: 32px;
+        /* 133.333% */
+        margin-bottom: 16px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+        line-height: 24px;
+        /* 150% */
+        margin-bottom: 25px;
+        width: 526px;
+        height: 77px;
+
+    }
+
+    .quote-background-wrapper {
+        display: flex;
+        width: 100%;
+        height: 302px;
+        margin-bottom: 16px;
+    }
+
+    .quote-background-image {
+        min-width: 368px;
+        height: 302px;
+        border-radius: 30px;
+        background-image: url("../../images/favorites/woomen_tablet.jpg");
+        background-repeat: no-repeat;
+        background-position: left;
+        border-radius: 50px;
+    }
+
+    .inform {
+        position: relative;
+        width: 368px;
+        height: 302px;
+        border-radius: 50px;
+
+    }
+
+    .inform-label {
+        font-size: 24px;
+        line-height: 32px;
+        /* 133.333% */
+
+    }
+}
+@media screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px),
+screen and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1439px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px) {
+    .quote-background-image {
+        background-image: url("../../images/favorites/woomen_tablet@2x.jpg");
+    }
+}
+@media screen and (min-width: 1440px) {
+    .quote {
+            margin-top: 156px;
+        }
+    .container-quote-wrapper {
+        display: flex;
+        height: 302px;
+        margin-bottom: 16px;
+    }
+
+    .container-quote {
+        padding: 64px;
+        margin: 0;
+
+    }
+
+    .quote-icon {
+        right: 64px;
+
+    }
+
+    .quote-background-wrapper {
+        margin: 0;
+    }
+
+    .quote-background-image {
+        min-width: 352px;
+        height: 302px;
+        background-image: url("../../images/favorites/woomen.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+screen and (min-resolution: 2dppx) and (min-width: 1440px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+    .quote-background-image {
+        background-image: url("../../images/favorites/woomen@2x.jpg");
+    }
+}

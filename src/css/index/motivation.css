@@ -1,0 +1,224 @@
+.sport-image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 0%;
+}
+
+/* photo */
+
+.sport-image {
+  width: 335px;
+  height: 269px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: url('../../images/img_motivation/mobile_1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%, 50%;
+}
+
+/* 0px-767px-2x */
+
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .sport-image {
+    background: url('../../images/img_motivation/mobile_@2x.jpg');
+    background-repeat: no-repeat;
+    background-size: 335px 269px;
+  }
+}
+
+/* 101 min */
+
+.norm-of-sports {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 335px;
+  height: 50%;
+  border-radius: 30px;
+  background: #1b1b1b;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-title {
+  padding-left: 70px;
+  padding-top: 40px;
+  color: #f6f6f6;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.daily-norm {
+  margin-top: auto;
+  padding-left: 70px;
+  margin-bottom: 14px;
+  color: rgba(246, 246, 246, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  /* 128.571% */
+}
+
+.daily-norm-text {
+  padding-left: 70px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  color: rgba(246, 246, 246, 0.6);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  /* 128.571% */
+}
+
+.icon-dumbbell {
+  fill: #f6f6f6;
+}
+
+.icon-dumbbell-ellipse {
+  position: absolute;
+  left: 36px;
+  top: 40px;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Обрезать видимые части тени */
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(246, 246, 246, 0.2);
+  /* Создаем ореол с помощью box-shadow */
+}
+
+/*tablet   */
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .sport-image {
+    width: 736px;
+    height: 302px;
+    background: url('../../images/img_motivation/tablet_1.jpg');
+    background-size: cover;
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+    .sport-image {
+      background: url('../../images/img_motivation/tablet_@2x.jpg');
+      background-repeat: no-repeat;
+      background-size: 736px 302px;
+    }
+  }
+
+  .norm-of-sports {
+    height: 302px;
+    max-width: 736px;
+  }
+
+  .daily-norm {
+    margin-bottom: 25px;
+    padding-left: 114px;
+  }
+
+  .article-title {
+    padding-left: 114px;
+    padding-top: 64px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .daily-norm-text {
+    padding-left: 114px;
+    padding-right: 96px;
+    padding-bottom: 64px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .icon-dumbbell-ellipse {
+    left: 64px;
+    top: 65px;
+  }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1440px) {
+  .sport-image {
+    width: 704px;
+    height: 302px;
+    background: url('../../images/img_motivation/desktop_1.jpg');
+    background-size: cover;
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  screen and (min-resolution: 2dppx) and (min-width: 1440px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+    .sport-image {
+      background: url('../../images/img_motivation/desktop_@2x.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      /* Используем относительные единицы */
+    }
+  }
+
+  .sport-image-section {
+    flex-direction: row;
+    height: 302px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 1408px;
+  }
+
+  .daily-norm-text {
+    padding-right: 64px;
+  }
+
+  .norm-of-sports {
+    height: 302px;
+    max-width: 704px;
+  }
+
+  .daily-norm {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 114px;
+  }
+
+  .article-title {
+    padding-left: 114px;
+    padding-top: 64px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .daily-norm-text {
+    padding-left: 114px;
+    padding-right: 64px;
+    padding-bottom: 64px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .icon-dumbbell-ellipse {
+    left: 64px;
+    top: 65px;
+  }
+}

@@ -1,0 +1,218 @@
+/* MOBILE */
+.hero {
+    display: flex;
+    justify-content: center;
+}
+
+.girl {
+    width: 335px;
+    height: 387px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-image: url('../../images/hero/girl-mob.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .girl {
+        background-image: url('../../images/hero/girl-mob@2x.png');
+    }
+}
+
+.tags {
+    display: flex;
+    width: 141px;
+    padding-top: 319px;
+    margin-left: 10px;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.tags-item {
+    display: flex;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid rgba(246, 246, 246, 0.30);
+}
+
+.text {
+    color: #F6F6F6;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.16em;
+}
+
+.hero-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 81px;
+    border-radius: 30px;
+    background: #FFF;
+}
+
+.hero-title-text {
+    width: 295px;
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.89em;
+    letter-spacing: -0.0028;
+}
+
+.hero-title-text-part {
+    color: #7E847F;
+    font-family: "DM Sans";
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -0.0028;
+}
+
+.hero-motivation-text {
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1, 28em;
+    letter-spacing: -0.14px;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+    .hero-container {
+        width: 736px;
+        display: flex;
+    }
+
+    .girl {
+        width: 248px;
+        height: 900px;
+        border-radius: 50px 0px 50px 50px;
+        margin-bottom: 0px;
+        background-image: url('../../images/hero/girl-tab.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        .girl {
+            background-image: url('../../images/hero/girl-tab@2x.png');
+        }
+    }
+
+    .tags {
+        width: 196px;
+        padding-top: 764px;
+        margin-left: 20px;
+    }
+
+    .tags-item {
+        padding: 4px 16px;
+        gap: 10px;
+    }
+
+    .text {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+
+    .hero-title-block {
+        gap: 25px;
+        padding-top: 231px;
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-bottom: 192px;
+        border-radius: 0px 50px 50px 50px;
+        background: #FFF;
+    }
+
+    .hero-title-text {
+        width: 424px;
+        font-size: 98px;
+        line-height: 0.96em;
+        letter-spacing: -1.96px;
+    }
+
+    .hero-title-text-part {
+        font-size: 98px;
+        font-style: italic;
+        line-height: 0.96em;
+        letter-spacing: -1.96px;
+    }
+
+    .hero-motivation-text {
+        width: 396px;
+        font-size: 18px;
+        line-height: 1, 33em;
+        letter-spacing: -0.18px;
+    }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1440px) {
+    .hero-container {
+        width: 1408px;
+        display: flex;
+    }
+
+    .girl {
+        width: 704px;
+        height: 884px;
+        border-radius: 50px 0px 50px 50px;
+        margin-bottom: 0px;
+        background-image: url('../../images/hero/girl-desk.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        .girl {
+            background-image: url('../../images/hero/girl-desk@2x.png');
+        }
+    }
+
+    .tags {
+        padding-top: 780px;
+        margin-left: 48px;
+    }
+
+    .hero-title-block {
+        padding-top: 225px;
+        padding-left: 32px;
+        padding-right: 33px;
+        padding-bottom: 241px;
+    }
+
+    .hero-title-text {
+        width: 639px;
+        font-size: 120px;
+        line-height: 0.95em;
+        letter-spacing: -2.4px;
+    }
+
+    .hero-title-text-part {
+        font-size: 120px;
+        font-style: italic;
+        line-height: 0.95em;
+        letter-spacing: -2.4px;
+    }
+
+    .hero-motivation-text {
+        width: 528px;
+    }
+}
