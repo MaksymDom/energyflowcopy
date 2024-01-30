@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Energy Flow</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/goit-energy-flow/assets/apple-touch-icon-6b42ddee.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABxVBMVEUAAACAgIB+hH5/hH9+hYB+hIB+hIB+hIB9hYB2iXaAhoB/hH9+hH9+hIB8g3xxjnF+g4B+hH9+g4CAgIB+hH9+hH96hXp9gn1+hX+AhYCAgIB+hIB+hYB/hH9+hH9+hYB+hIB+hH5/hH9+hH9+hH9+hH9+hIB+hYB+hH6AgICAh4B/hH9+g4Btkm1+hIB+hX97hHt9gn15hnl+hH9+g4B+hYB/hH99hYB+hH+HjIi9wL7GyMaSl5Pa29r29vbu7+6HjYiCh4P19vWfo6CGi4fQ0dDHycelqaaFi4be397v8O+Jjoqzt7T09fT09PS4vLnGycfMz82YnZni4+Ll5uW6vbu/wsCZnZq3urjR09Hy8vKOk4+GjIfBw8GKj4uRlpL19fW0t7SboJzt7e2coZ2praru7u7s7Ozz8/Px8vGmqqeKkIvQ0tC+wb6an5uMkY3Hysjw8fDZ2tnP0c/Aw8B/hYCBh4Lj5OOJj4rZ29nU1tSFioaDiISdop6CiIPNz83W2NZ/hH+kqKXw8PDJy8mQlZHm5+aipqOjp6SBhoKIjYnx8fGNko7h4uHS1NKoq6iEiYXd3t3T1NOusq+7vry1uLb////UL9BuAAAAOHRSTlMADlmbyur6mlgNJp31nCUJjPuKCNPHGTHjLhjQzIHzlvRXmevp+fiYVQwih8YH4uUbLRXBhsiXVsnIqF0AAAABYktHRJaRaSs5AAAACXBIWXMAABOvAAATrwFj5o7DAAAAB3RJTUUH6AEeCTEUaDPSEwAAAcdJREFUOMttU2VDAzEMLTDBXYcN2AEDhkux4K4bbLi7Dncb7s7/pb1t195t+XLJe69NmksQkszH10+l1mjUKq1/APK0wKBgLFlwSKiCDguPwDLTREbxfGg09rCYWMbHqbEXi0+Qziv4yqrqGlGhc/JRiYqjtQB19dRJChMF4Qq+oREAmkQ3WXwfV39zS2tbO+4A6OwS4xSaJIg73A090Fvb12+2uIBU0j+uP3hgsN1K7rdJgD4A+XL8EAzjESIYrcRjtnERSkN+nGCid3JqmghgZnaucV6E0pGKE1gWcCuhpxeXlldWXf1EGbInri0TwfoGzG26AAMSZIIqmmDIvmV3A5lygX2b8Ds8kilPsUsrmOURg6zIJgByxd4+/9ORlgUHhzBwdAxwcsqwLOTvds/aTgDO8cUlwBUTZCOjnn4d1+Ybkv+WuHejcM9abUQohDoPhN02Pz5h/DwILxZJoKXzpCHO69v7xydFPr+g50HihRw6EJFc0Y5vgB8W5jpHLoYhNQC/LMozOYdSly9B+9Y/hxQUFLrHOiEee7H8IrYYxSWefJ6OXy1Tsl5OC6UmxXbqUjmJPj3Hy34b07LKDIJgKCuvMDL0Hz6+w++ou1+iAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI0LTAxLTMwVDA5OjQ5OjIwKzAwOjAwXTl78wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNC0wMS0zMFQwOTo0OToyMCswMDowMCxkw08AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA9lBMVEUAAAB9gn1/hH9+hIB+hIB+hYCAhYBtkm1+hYB+hH9+hIB+hYCAgIB+hIB9hH9/hH9/hH99gn1+hYB+hH9+hH9+hH9+hIB+hH9/hH+AhoB+hIB9hH9mmWZ+hH+BhoKfpKCEiYW0t7X29vbDxcONko7g4eDFyMa0t7SjqKS7vryoq6je396ssK2DiISRlpK8v72YnZnh4uHb3dutsa7MzszV19XCxMKjp6SVmpb09fT19vWcoZ1/hH/v7+/BxMKAhYGHjYivs7DZ2tnr6+uFi4aXnJj19fWtsK29wL7Y2tiws7CIjYnQ0tDn6OeKkIuMkY2LkIz////d6295AAAAHXRSTlMALZHU9JAsB5b9/JQGvr2XkyuO1dPz8vGNKry7Bee4i2UAAAABYktHRFGUaXwqAAAACXBIWXMAAAnXAAAJ1wGxbhe3AAAAB3RJTUUH6AEeCTET9ldHsAAAALpJREFUGNMtT+UawjAQO4aPAQM2/JDCcHd39/d/Gnrt8qOXpL1+CQCHQ3G6XE63ByS8Pj8KqAFN6KCUuXwBQ+SEpcYiKyHqfF+8L1uVqlXjWxFQxHW90WStdgcxCjFhdHuM9QdDRANM+cOIjSdTPuMQF3o2XywFSciV1WC83myJGeBG3O0Px9P5ciUjCR4Vb/fHc/uyThQ2BRCQsd4fGgpPqqWJfX90ZrJURtNVu5yStftGooZpGskU8T+h+RuQ7apZLgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0wMS0zMFQwOTo0OToxOSswMDowMEYuOcMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMDEtMzBUMDk6NDk6MTkrMDA6MDA3c4F/AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="
+    />
+    <link rel="manifest" href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiRW5lcmd5LkZsb3ciLAogICAgInNob3J0X25hbWUiOiAiRW5lcmd5LkZsb3ciLAogICAgImljb25zIjogWwogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLAogICAgICAgICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLAogICAgICAgICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgICAgICB9CiAgICBdLAogICAgInRoZW1lX2NvbG9yIjogIiNmNmY2ZjYiLAogICAgImJhY2tncm91bmRfY29sb3IiOiAiI2Y2ZjZmNiIsCiAgICAic3RhcnRfdXJsIjogImh0dHBzOi8vZGF2aWQtaXZhbm92LmdpdGh1Yi5pby9nb2l0LWVuZXJneS1mbG93LyIsCiAgICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIgp9Cg==" />
+    <link
+      rel="mask-icon"
+      href="/goit-energy-flow/assets/safari-pinned-tab-5a3dfa2d.svg"
+      color="#1b1b1b"
+    />
+    <meta name="msapplication-TileColor" content="#1b1b1b" />
+    <meta name="theme-color" content="#f6f6f6" />
+    <script type="module" crossorigin src="/goit-energy-flow/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-energy-flow/assets/header-6bdb2dfd.js">
+    <link rel="modulepreload" crossorigin href="/goit-energy-flow/assets/vendor-0a7943b3.js">
+    <link rel="stylesheet" href="/goit-energy-flow/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/goit-energy-flow/assets/index-d9e37bfb.css">
+  </head>
+
+  <body>
+
+  <!-- PAGE HEADER -->
+<header class="header container">
+  <div class="page-header-container">
+
+    <nav class="navigation">
+      <a class="logo" href="./index.html">energy.flow</a>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a class="navigation-button header-is-active" href="./index.html">Home</a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-button" href="./favorites.html">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-social-links">
+      <ul class="header-links-list">
+        <li class="header-link-item">
+          <a class="header-link" href="https://www.facebook.com/goITclub/">
+            <svg class="link-icon-header" width="28" height="28" aria-label="facebook">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-link-item">
+          <a class="header-link" href="https://www.instagram.com/goitclub/">
+            <svg class="link-icon-header" width="28" height="28" aria-label="instagram">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-link-item">
+          <a class="header-link" href="https://www.youtube.com/c/GoIT">
+            <svg class="link-icon-header" width="28" height="28" aria-label="youtube">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button class="open-mobile-menu-btn">
+      <svg type="button" class="open-mobile-menu-btn-icon" width="32" height="16" aria-label="mobile menu open icon">
+        <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-burger"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- BURGER MENU -->
+<!-- <div class="backdrop">
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <a class="mobile-logo" href="../../index.html">energy.flow</a>
+      <button class="mobile-menu-close-btn" type="button">
+        <svg
+          class="mobile-menu-close-icon"
+          width="20"
+          height="20"
+          aria-label="mobile menu close icon"
+        >
+          <use href="../images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="container mobile-navigation-container-menu">
+      <nav class="mobile-navigation">
+        <ul class="mobile-navigation-list">
+          <li class="mobile-navigation-item">
+            <button id="homeButton" class="mobile-navigation-button">
+              Home
+            </button>
+          </li>
+          <li class="mobile-navigation-item">
+            <button id="favoritesButton" class="mobile-navigation-button">
+              Favorites
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile-header-social-links">
+      <ul class="mobile-header-links-list">
+        <li class="mobile-header-link-item">
+          <a
+            class="mobile-header-link"
+            href="https://www.facebook.com/goITclub/"
+          >
+            <svg
+              class="link-icon-header"
+              width="28"
+              height="28"
+              aria-label="facebook"
+            >
+              <use href="../images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-header-link-item">
+          <a
+            class="mobile-header-link"
+            href="https://www.instagram.com/goitclub/"
+          >
+            <svg
+              class="link-icon-header"
+              width="28"
+              height="28"
+              aria-label="instagram"
+            >
+              <use href="../images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-header-link-item">
+          <a class="mobile-header-link" href="https://www.youtube.com/c/GoIT">
+            <svg
+              class="link-icon-header"
+              width="28"
+              height="28"
+              aria-label="youtube"
+            >
+              <use href="../images/icons.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="../js/header.js"></script>
+</div> -->
+
+    <main>
+      <section class="hero container">
+    <div class="hero-container ">
+      <div class="girl">
+        <ul class="tags">
+            <li class="tags-item">
+                <p class="text"> #Sport </p>
+            </li>
+            <li class="tags-item">
+                <p class="text"> #Healthy </p>
+            </li>
+            <li class="tags-item">
+                <p class="text"> #Workout </p>
+            </li>
+            <li class="tags-item">
+                <p class="text"> #Diet </p>
+            </li>
+        </ul>
+    </div>
+    <div class="hero-title-block">
+        <div class="hero-title">
+            <h1 class="hero-title-text"> Get <span class="hero-title-text-part">Body</span> in shape, Stay healthy </h1>
+        </div>
+        <div class="hero-motivation">
+            <p class="hero-motivation-text"> Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support. </p>
+        </div>
+    </div>  
+    </div>
+</section>
+
+      <section class="container quot-block-section">
+  <div class="quot">
+      <div class="quot-box">   
+        <div class="box-icon-man">   
+        <svg class="quot-icon-man" width="18" height="20">
+          <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-man" aria-label="icon-man"></use>
+        </svg>
+      </div>  
+  <h3 class="quot-title">Quote of the day</h3>
+  <div class="box-icon-quotes">
+  <svg class="quot-icon-quotes" width="28" height="28">
+      <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-quotes" aria-label="icon-man"></use>
+    </svg>
+  </div> 
+  </div>
+   
+  <p class="quot-text">A lot of times I find that people who are blessed with the most talent don't ever develop that attitude, and the ones who aren't blessed in that way are the most competitive and have the biggest heart.
+      </p>
+      <p class="quot-author">Tom Brady</p>
+  </div>
+  <div class="box-quot-img">
+  </div>
+  </section>
+  
+
+
+      <section class="exercises container">
+  <div class="exercises-content-container">
+    <h1 class="exercises-title">
+      Exercises
+      <span class="span visually-hidden"
+        >/<span class="second-span"></span
+      ></span>
+    </h1>
+    <div class="exercises-header">
+      <div class="btn-wrapper">
+        <button class="exercises-btn-filter" type="button">Muscles</button>
+        <button class="exercises-btn-filter" type="button">Body parts</button>
+        <button class="exercises-btn-filter" type="button">Equipment</button>
+      </div>
+
+      <form class="exercises-form visually-hidden">
+        <input
+          class="exercises-input"
+          name="search"
+          type="text"
+          placeholder="Search"
+          required
+        />
+        <button class="exercises-button" type="submit" data-start>
+          <svg
+            class="search-icon"
+            width="18"
+            height="18"
+            aria-label="search icon"
+          >
+            <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <ul class="exercises-list workout-list"></ul>
+    <div class="exercises-pagination"></div>
+  </div>
+</section>
+
+
+      <section class="container sport-image-section">
+  <div class="sport-image">
+  </div>
+  <div class="norm-of-sports">
+    <div class="icon-dumbbell-ellipse">
+      <svg
+        class="icon-dumbbell"
+        width="20"
+        height="20" 
+        aria-label="mobile tablet modal dumbbell icon">
+        <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-dumbbell"></use>
+      </svg>
+    </div>
+      <h2 class="article-title">110 min</h2>
+      <h3 class="daily-norm">Daily  norm of sports</h3>
+      <p class="daily-norm-text">The World Health Organization recommends at least 150 minutes of moderate-intensity aerobic physical activity throughout the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes every day? </p>
+  </div>
+</section>
+    </main>
+
+    <footer class="page-footer container">
+  <div class="page-footer-container">
+    <div class="footer-logo-container">
+      <a class="footer-link-logo link-logo" href="../../index.html"
+        >energy.flow</a
+      >
+      <div class="social-icon-container">
+        <ul class="footer-social-list">
+          <li class="footer-social-item">
+            <a
+              class="footer-social-item-link"
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+            >
+              <svg
+                class="footer-social-icon"
+                width="20"
+                height="20"
+                aria-label="facebook icon"
+              >
+                <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a
+              class="footer-social-item-link"
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+            >
+              <svg
+                class="footer-social-icon"
+                width="20"
+                height="20"
+                aria-label="instagram icon"
+              >
+                <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a
+              class="footer-social-item-link"
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+            >
+              <svg
+                class="footer-social-icon"
+                width="20"
+                height="20"
+                aria-label="youtube icon"
+              >
+                <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-subscribe">
+      <div class="footer-paragraph">
+        <p class="footer-header">
+          Transforming your <span>body</span> shape with us
+        </p>
+      </div>
+      <div class="subscribe-container">
+        <p class="subscribe-header">Subscribe and learn about new exercises!</p>
+        <form class="footer-form">
+          <label class="footer-form-label">
+            <input
+              class="footer-form-input"
+              name="user-email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+          </label>
+          <button class="footer-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-terms">
+    <p>Energy Flow. All rights reserved.</p>
+    <ul class="privacy">
+      <li>
+        <p>Privacy Policy</p>
+      </li>
+      <li>
+        <p>/</p>
+      </li>
+      <li>
+        <p>Terms of Service</p>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+    <div class="backdrop visually-hidden">
+</div>
+
+    <!-- BURGER MENU -->
+<div class="mobile-backdrop hidden">
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <a class="logo mobile-logo" href="./index.html">energy.flow</a>
+      <button class="mobile-menu-close-btn" type="button">
+        <svg class="mobile-menu-close-icon" width="20" height="20" aria-label="mobile menu close icon">
+          <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-navigation">
+      <ul class="mobile-navigation-list">
+        <li class="mobile-navigation-item">
+          <a class="mobile-navigation-button mobile-navigation-button-active" href="./index.html"
+            id="homeButton">Home</a>
+        </li>
+        <li class="mobile-navigation-item">
+          <a class="mobile-navigation-button" href="./favorites.html" id="favoritesButton">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="mobile-header-social-links">
+      <ul class="mobile-header-links-list">
+        <li class="mobile-header-link-item">
+          <a class="mobile-header-link" href="https://www.facebook.com/goITclub/">
+            <svg class="mobile-link-icon-header" width="28" height="28" aria-label="facebook">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-header-link-item">
+          <a class="mobile-header-link" href="https://www.instagram.com/goitclub/">
+            <svg class="mobile-link-icon-header" width="28" height="28" aria-label="instagram">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-header-link-item">
+          <a class="mobile-header-link" href="https://www.youtube.com/c/GoIT">
+            <svg class="mobile-link-icon-header" width="28" height="28" aria-label="youtube">
+              <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="scroll-container">
+    <button class="scroll-btn" type="button">
+        <svg class="scroll-icon">
+            <use href="/goit-energy-flow/assets/icons-b3557161.svg#icon-arrow"></use>
+        </svg>
+    </button>
+</div>
+
+    
+  </body>
+</html>
